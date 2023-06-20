@@ -5,11 +5,13 @@ import com.example.data.dto.WorkerDto;
 import com.example.store.entity.Company;
 import com.example.store.entity.Worker;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EntityDtoMapper {
 
+    @Autowired
     private ModelMapper mapper;
 
     public Company mapToCompany(CompanyDto companyDto) {
@@ -20,7 +22,7 @@ public class EntityDtoMapper {
         return mapper.map(company, CompanyDto.class);
     }
 
-    public Worker mapToWorker(WorkerDto workerDto){
+    public Worker mapToWorker(WorkerDto workerDto) {
         return mapper.map(workerDto, Worker.class);
     }
 
