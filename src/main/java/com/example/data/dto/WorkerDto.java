@@ -1,6 +1,7 @@
 package com.example.data.dto;
 
 import com.example.store.entity.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class WorkerDto {
 
     private String profession;
 
+    @JsonIgnore
     private Company company;
 }

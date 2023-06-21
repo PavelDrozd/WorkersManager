@@ -27,6 +27,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     //Util
+    implementation 'mysql:mysql-connector-java:8.0.32'
     implementation 'org.modelmapper:modelmapper:3.1.1'
 
     //Lombok

@@ -9,7 +9,7 @@ public class FieldOfActivityConverter implements AttributeConverter<Company.Fiel
 
     @Override
     public Integer convertToDatabaseColumn(Company.FieldOfActivity attribute) {
-        return switch (attribute){
+        return switch (attribute) {
             case OTHER -> 0;
             case SERVICE -> 1;
             case SALES -> 2;

@@ -1,5 +1,6 @@
 package com.example.store.entity;
 
+import com.example.store.entity.converter.FieldOfActivityConverter;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
@@ -17,7 +18,6 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
 
@@ -42,13 +42,14 @@ public class Company {
     private Long numberOfClients;
 
     @Column(name = "enterprise_fund")
-    private BigDecimal enterpriseFund;
+    private Double enterpriseFund;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "company")
     @ToString.Exclude
     private List<Worker> workers;
 
-    @Convert
+    @Convert(converter = FieldOfActivityConverter.class)
+    @Column(name = "field_of_activity_id")
     private FieldOfActivity fieldOfActivity;
 
     public enum FieldOfActivity {
